@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collab With Us — dp_udan_sp</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; background: #1a1a1a; position: sticky; top: 0; z-index: 100;
+    }
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: #e91e8c; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: #e91e8c; }
+
+    .page-hero {
+      text-align: center; padding: 3rem 2rem 2rem;
+      background: radial-gradient(ellipse at top, #1a0a12 0%, #0f0f0f 70%);
+    }
+    .page-hero h1 { font-size: 2rem; color: #fff; }
+    .page-hero p { color: #aaa; margin-top: 0.5rem; }
+
+    .section { padding: 2.5rem 2rem; max-width: 800px; margin: 0 auto; }
+    .section h2 {
+      font-size: 1.4rem; color: #fff; margin-bottom: 1.5rem;
+      border-left: 4px solid #e91e8c; padding-left: 0.8rem;
+    }
+
+    /* COLLAB TYPES */
+    .collab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .collab-card {
+      background: #1a1a1a; border: 1px solid #2a2a2a;
+      border-radius: 12px; padding: 1.3rem; text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .collab-card:hover { border-color: #e91e8c; transform: translateY(-3px); }
+    .collab-card .icon { font-size: 2rem; margin-bottom: 0.6rem; }
+    .collab-card h3 { color: #fff; font-size: 0.95rem; margin-bottom: 0.4rem; }
+    .collab-card p { color: #888; font-size: 0.82rem; }
+
+    /* REACH OUT */
+    .reach-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .reach-card {
+      display: flex; align-items: center; gap: 1rem;
+      background: #1a1a1a; border-radius: 12px; padding: 1.2rem;
+      text-decoration: none; color: #e0e0e0;
+      border: 1px solid #2a2a2a;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .reach-card:hover { border-color: #e91e8c; transform: translateX(4px); }
+    .reach-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .reach-card .info h3 { color: #fff; font-size: 0.95rem; }
+    .reach-card .info p { color: #888; font-size: 0.82rem; margin-top: 0.2rem; }
+    .reach-card .arrow { margin-left: auto; color: #e91e8c; font-size: 1.2rem; }
+
+    .note-box {
+      background: #1a0a12; border: 1px solid #e91e8c33;
+      border-radius: 12px; padding: 1.2rem;
+      color: #bbb; font-size: 0.9rem; line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center; padding: 1.5rem;
+      color: #444; font-size: 0.8rem;
+      border-top: 1px solid #1f1f1f;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">💕 dp_udan_sp</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mediakit.html">Media Kit</a></li>
+      <li><a href="contact.html" class="active">Collab</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>💌 Work With Us</h1>
+    <p>We'd love to collaborate with brands and creators who align with our vibe</p>
+  </div>
+
+  <!-- COLLAB TYPES -->
+  <div class="section">
+    <h2>What We Offer</h2>
+    <div class="collab-grid">
+      <div class="collab-card">
+        <div class="icon">📢</div>
+        <h3>Brand Promotions</h3>
+        <p>Product features in Reels, Stories & YouTube videos</p>
+      </div>
+      <div class="collab-card">
+        <div class="icon">🎬</div>
+        <h3>Dedicated Videos</h3>
+        <p>Full video content around your brand or product</p>
+      </div>
+      <div class="collab-card">
+        <div class="icon">📸</div>
+        <h3>Story Shoutouts</h3>
+        <p>Instagram & Facebook story promotions</p>
+      </div>
+      <div class="collab-card">
+        <div class="icon">🤝</div>
+        <h3>Creator Collabs</h3>
+        <p>Joint content with other creators or pages</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REACH OUT -->
+  <div class="section">
+    <h2>Reach Out</h2>
+    <div class="reach-cards">
+
+      <a href="https://www.instagram.com/dp_udan_sp/" target="_blank" class="reach-card">
+        <div class="reach-icon" style="background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);">📸</div>
+        <div class="info">
+          <h3>DM on Instagram</h3>
+          <p>@dp_udan_sp · Fastest response</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="https://www.instagram.com/rahdnuos_sp/" target="_blank" class="reach-card">
+        <div class="reach-icon" style="background: linear-gradient(45deg,#f09433,#dc2743,#bc1888);">🎨</div>
+        <div class="info">
+          <h3>DM on Instagram (Content Page)</h3>
+          <p>@rahdnuos_sp</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="https://www.facebook.com/Poookiecouple" target="_blank" class="reach-card">
+        <div class="reach-icon" style="background:#1877f2;">📘</div>
+        <div class="info">
+          <h3>Message on Facebook</h3>
+          <p>Poookiecouple</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/soundharsp/" target="_blank" class="reach-card">
+        <div class="reach-icon" style="background:#0077b5;">🔗</div>
+        <div class="info">
+          <h3>Connect on LinkedIn</h3>
+          <p>S P Soundhar</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+      <a href="https://www.youtube.com/@dp_udan_sp" target="_blank" class="reach-card">
+        <div class="reach-icon" style="background:#ff0000;">▶️</div>
+        <div class="info">
+          <h3>YouTube Channel</h3>
+          <p>@dp_udan_sp · 5.14K subscribers</p>
+        </div>
+        <div class="arrow">→</div>
+      </a>
+
+    </div>
+
+    <div class="note-box">
+      💡 For promotions and collabs, DM us on Instagram @dp_udan_sp with your brand details
+      and we'll get back to you within 24 hours.
+    </div>
+  </div>
+
+  <footer>© 2026 dp_udan_sp · Deepika & Soundhar · Chennai</footer>
+
+</body>
+</html>

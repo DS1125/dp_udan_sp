@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Kit — dp_udan_sp</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; background: #1a1a1a; position: sticky; top: 0; z-index: 100;
+    }
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: #e91e8c; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: #e91e8c; }
+
+    .page-hero {
+      text-align: center; padding: 3rem 2rem 2rem;
+      background: radial-gradient(ellipse at top, #1a0a12 0%, #0f0f0f 70%);
+    }
+    .page-hero h1 { font-size: 2rem; color: #fff; }
+    .page-hero p { color: #aaa; margin-top: 0.5rem; }
+
+    .section { padding: 2.5rem 2rem; max-width: 960px; margin: 0 auto; }
+    .section h2 {
+      font-size: 1.4rem; color: #fff; margin-bottom: 1.5rem;
+      border-left: 4px solid #e91e8c; padding-left: 0.8rem;
+    }
+
+    /* PLATFORM CARDS */
+    .platforms { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; }
+    .pcard {
+      background: #1a1a1a; border: 1px solid #2a2a2a;
+      border-radius: 14px; padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .pcard:hover { border-color: #e91e8c; transform: translateY(-3px); }
+    .pcard-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+    .picon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+    }
+    .ig-bg { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+    .fb-bg { background: #1877f2; }
+    .yt-bg { background: #ff0000; }
+    .pcard h3 { color: #fff; font-size: 1rem; }
+    .pcard .handle { color: #777; font-size: 0.8rem; }
+
+    .stats-row { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    .stat {
+      flex: 1; background: #111; border-radius: 10px;
+      padding: 0.8rem; text-align: center; min-width: 75px;
+    }
+    .stat .num { font-size: 1.3rem; font-weight: 700; color: #e91e8c; }
+    .stat .lbl { font-size: 0.7rem; color: #777; margin-top: 0.2rem; }
+
+    .view-link {
+      display: inline-block; margin-top: 1rem;
+      color: #e91e8c; font-size: 0.85rem; text-decoration: none;
+    }
+    .view-link:hover { text-decoration: underline; }
+
+    /* CONTENT TYPES */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .tag {
+      background: #1a0a12; border: 1px solid #e91e8c;
+      color: #e91e8c; padding: 0.4rem 1rem;
+      border-radius: 20px; font-size: 0.85rem;
+    }
+
+    /* AUDIENCE */
+    .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+    .acard {
+      background: #1a1a1a; border-radius: 12px;
+      padding: 1.2rem; text-align: center;
+    }
+    .acard .big { font-size: 1.8rem; font-weight: 700; color: #e91e8c; }
+    .acard .desc { font-size: 0.82rem; color: #888; margin-top: 0.3rem; }
+
+    /* NICHE */
+    .niche-box {
+      background: #1a1a1a; border-radius: 12px;
+      padding: 1.5rem; border-left: 4px solid #e91e8c;
+    }
+    .niche-box p { color: #bbb; line-height: 1.8; }
+
+    footer {
+      text-align: center; padding: 1.5rem;
+      color: #444; font-size: 0.8rem;
+      border-top: 1px solid #1f1f1f;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">💕 dp_udan_sp</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mediakit.html" class="active">Media Kit</a></li>
+      <li><a href="contact.html">Collab</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-hero">
+    <h1>📊 Media Kit</h1>
+    <p>Everything a collaborator needs to know about us</p>
+  </div>
+
+  <!-- PLATFORMS -->
+  <div class="section">
+    <h2>Platform Stats</h2>
+    <div class="platforms">
+
+      <div class="pcard">
+        <div class="pcard-header">
+          <div class="picon ig-bg">📸</div>
+          <div>
+            <h3>Instagram</h3>
+            <div class="handle">@dp_udan_sp</div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="num">99.7K</div><div class="lbl">Followers</div></div>
+          <div class="stat"><div class="num">102</div><div class="lbl">Posts</div></div>
+          <div class="stat"><div class="num">11</div><div class="lbl">Following</div></div>
+        </div>
+        <a href="https://www.instagram.com/dp_udan_sp/" target="_blank" class="view-link">View Profile →</a>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-header">
+          <div class="picon ig-bg">🎨</div>
+          <div>
+            <h3>Instagram (Content)</h3>
+            <div class="handle">@rahdnuos_sp</div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="num">—</div><div class="lbl">Followers</div></div>
+          <div class="stat"><div class="num">—</div><div class="lbl">Posts</div></div>
+          <div class="stat"><div class="num">—</div><div class="lbl">Avg Views</div></div>
+        </div>
+        <a href="https://www.instagram.com/rahdnuos_sp/" target="_blank" class="view-link">View Profile →</a>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-header">
+          <div class="picon fb-bg">📘</div>
+          <div>
+            <h3>Facebook</h3>
+            <div class="handle">Poookiecouple</div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="num">16K</div><div class="lbl">Followers</div></div>
+          <div class="stat"><div class="num">—</div><div class="lbl">Avg Reach</div></div>
+          <div class="stat"><div class="num">—</div><div class="lbl">Engagement</div></div>
+        </div>
+        <a href="https://www.facebook.com/Poookiecouple" target="_blank" class="view-link">View Page →</a>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-header">
+          <div class="picon yt-bg">▶️</div>
+          <div>
+            <h3>YouTube</h3>
+            <div class="handle">@dp_udan_sp</div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="num">5.14K</div><div class="lbl">Subscribers</div></div>
+          <div class="stat"><div class="num">235</div><div class="lbl">Videos</div></div>
+          <div class="stat"><div class="num">—</div><div class="lbl">Total Views</div></div>
+        </div>
+        <a href="https://www.youtube.com/@dp_udan_sp" target="_blank" class="view-link">View Channel →</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NICHE -->
+  <div class="section">
+    <h2>Our Niche</h2>
+    <div class="niche-box">
+      <p>
+        💑 Couple & Relationship Content — real, relatable moments from our daily life<br>
+        💗 Love & Marriage — celebrating the beautiful chaos of being life partners<br>
+        📍 Based in Chennai — connecting with Tamil & Indian audiences<br>
+        🎬 Short videos, Reels, Vlogs — across Instagram, Facebook & YouTube
+      </p>
+    </div>
+  </div>
+
+  <!-- CONTENT TYPES -->
+  <div class="section">
+    <h2>Content We Create</h2>
+    <div class="tags">
+      <span class="tag">Couple Reels</span>
+      <span class="tag">Relationship Content</span>
+      <span class="tag">Daily Vlogs</span>
+      <span class="tag">Marriage Life</span>
+      <span class="tag">Short Videos</span>
+      <span class="tag">Lifestyle</span>
+      <span class="tag">Promotions</span>
+      <span class="tag">Brand Reviews</span>
+    </div>
+  </div>
+
+  <!-- AUDIENCE -->
+  <div class="section">
+    <h2>Audience Overview</h2>
+    <div class="audience-grid">
+      <div class="acard"><div class="big">18–34</div><div class="desc">Primary Age Group</div></div>
+      <div class="acard"><div class="big">🇮🇳</div><div class="desc">Primarily India</div></div>
+      <div class="acard"><div class="big">120K+</div><div class="desc">Total Reach</div></div>
+      <div class="acard"><div class="big">Tamil</div><div class="desc">Primary Language</div></div>
+    </div>
+  </div>
+
+  <footer>© 2026 dp_udan_sp · Deepika & Soundhar · Chennai</footer>
+
+</body>
+</html>

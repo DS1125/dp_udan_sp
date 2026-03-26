@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dp_udan_sp — Deepika & Soundhar</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; }
+
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; background: #1a1a1a; position: sticky; top: 0; z-index: 100;
+    }
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: #e91e8c; }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; }
+    nav ul a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: #e91e8c; }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem 3rem;
+      background: radial-gradient(ellipse at top, #1a0a12 0%, #0f0f0f 70%);
+    }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 50%;
+      border: 3px solid #e91e8c;
+      margin: 0 auto 1.2rem;
+      background: #2a1a22;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .hero h1 { font-size: 2.5rem; color: #fff; }
+    .hero h1 span { color: #e91e8c; }
+    .hero .tagline { color: #aaa; margin-top: 0.5rem; font-size: 1rem; }
+    .hero .location { color: #777; font-size: 0.9rem; margin-top: 0.3rem; }
+
+    .quick-stats {
+      display: flex; justify-content: center; gap: 2rem;
+      margin: 2.5rem auto; flex-wrap: wrap; max-width: 700px;
+    }
+    .qstat { text-align: center; }
+    .qstat .num { font-size: 2rem; font-weight: 700; color: #e91e8c; }
+    .qstat .lbl { font-size: 0.8rem; color: #777; margin-top: 0.2rem; }
+
+    .platform-pills {
+      display: flex; justify-content: center; gap: 0.8rem;
+      flex-wrap: wrap; margin-top: 1.5rem;
+    }
+    .pill {
+      padding: 0.5rem 1.2rem; border-radius: 30px;
+      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .pill:hover { transform: translateY(-2px); opacity: 0.85; }
+    .pill-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
+    .pill-fb { background: #1877f2; color: #fff; }
+    .pill-yt { background: #ff0000; color: #fff; }
+
+    .about-section { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; text-align: center; }
+    .about-section h2 { font-size: 1.5rem; color: #fff; margin-bottom: 1rem; }
+    .about-section p { color: #aaa; font-size: 1rem; line-height: 1.8; }
+
+    .cta-section {
+      text-align: center; padding: 3rem 2rem;
+      background: linear-gradient(135deg, #1a0a12, #0a0a1a);
+    }
+    .cta-section h2 { font-size: 1.8rem; color: #fff; margin-bottom: 0.5rem; }
+    .cta-section p { color: #aaa; margin-bottom: 1.5rem; }
+    .cta-btn {
+      display: inline-block; padding: 0.8rem 2.5rem;
+      background: #e91e8c; color: #fff; border-radius: 30px;
+      text-decoration: none; font-weight: 700; font-size: 1rem;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    footer {
+      text-align: center; padding: 1.5rem;
+      color: #444; font-size: 0.8rem;
+      border-top: 1px solid #1f1f1f;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">💕 dp_udan_sp</div>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="mediakit.html">Media Kit</a></li>
+      <li><a href="contact.html">Collab</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="avatar">💑</div>
+    <h1>Deepika <span>&</span> Soundhar</h1>
+    <div class="tagline">School friends turned Life partners 💗</div>
+    <div class="location">📍 Chennai · Digital Creators</div>
+
+    <div class="quick-stats">
+      <div class="qstat">
+        <div class="num">99.7K</div>
+        <div class="lbl">Instagram Followers</div>
+      </div>
+      <div class="qstat">
+        <div class="num">16K</div>
+        <div class="lbl">Facebook Followers</div>
+      </div>
+      <div class="qstat">
+        <div class="num">5.14K</div>
+        <div class="lbl">YouTube Subscribers</div>
+      </div>
+      <div class="qstat">
+        <div class="num">235</div>
+        <div class="lbl">Videos Published</div>
+      </div>
+    </div>
+
+    <div class="platform-pills">
+      <a href="https://www.instagram.com/dp_udan_sp/" target="_blank" class="pill pill-ig">📸 Instagram</a>
+      <a href="https://www.facebook.com/Poookiecouple" target="_blank" class="pill pill-fb">📘 Facebook</a>
+      <a href="https://www.youtube.com/@dp_udan_sp" target="_blank" class="pill pill-yt">▶️ YouTube</a>
+    </div>
+  </div>
+
+  <div class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      We are Deepika & Soundhar — a couple from Chennai sharing our love story, life moments,
+      and the beautiful chaos of marriage with the world. We just talk from the heart 💗<br><br>
+      From relatable relationship content to everyday vlogs, we create content that feels real,
+      warm, and genuinely us. Join our journey across Instagram, Facebook & YouTube.
+    </p>
+  </div>
+
+  <div class="cta-section">
+    <h2>Want to Work With Us?</h2>
+    <p>We're open to brand deals, promotions, and creative collaborations.</p>
+    <a href="contact.html" class="cta-btn">Let's Collaborate 💌</a>
+  </div>
+
+  <footer>© 2026 dp_udan_sp · Deepika & Soundhar · Chennai</footer>
+
+</body>
+</html>
