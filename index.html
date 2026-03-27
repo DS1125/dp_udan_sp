@@ -10,14 +10,12 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       color: #e0e0e0;
-      /* Forest background from Unsplash */
       background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
-    /* Dark overlay so text stays readable */
     body::before {
       content: '';
       position: fixed;
@@ -26,11 +24,22 @@
       z-index: 0;
     }
 
-    /* Everything sits above the overlay */
-    nav, .hero, .about-section, .cta-section, footer {
+    nav, .hero, .about-section, .cta-section, footer, .doodle-strip {
       position: relative;
       z-index: 1;
     }
+
+    /* ── Floating corner doodles ── */
+    .doodle-corner {
+      position: fixed;
+      z-index: 2;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .doodle-corner.tl { top: 70px;  left: 10px;  }
+    .doodle-corner.tr { top: 70px;  right: 10px; transform: scaleX(-1); }
+    .doodle-corner.bl { bottom: 40px; left: 10px; transform: scaleY(-1); }
+    .doodle-corner.br { bottom: 40px; right: 10px; transform: scale(-1,-1); }
 
     nav {
       display: flex; justify-content: space-between; align-items: center;
@@ -40,20 +49,12 @@
       border-bottom: 1px solid rgba(180, 140, 30, 0.3);
       position: sticky; top: 0; z-index: 100;
     }
-
-    nav .logo { font-size: 1.2rem; font-weight: 700; color: #d4af37; }  /* royal gold */
-
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: #d4af37; }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav ul a {
-      color: #c8b97a;
-      text-decoration: none; font-size: 0.9rem; transition: color 0.2s;
-    }
+    nav ul a { color: #c8b97a; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
     nav ul a:hover, nav ul a.active { color: #d4af37; }
 
-    .hero {
-      text-align: center;
-      padding: 5rem 2rem 3rem;
-    }
+    .hero { text-align: center; padding: 5rem 2rem 3rem; }
 
     .avatar {
       width: 120px; height: 120px; border-radius: 50%;
@@ -65,16 +66,32 @@
       box-shadow: 0 0 24px rgba(212, 175, 55, 0.4);
     }
 
-    .hero h1 { font-size: 2.5rem; color: #f5e6c8; }          /* warm ivory */
-    .hero h1 span { color: #d4af37; }                          /* royal gold */
+    .hero h1 { font-size: 2.5rem; color: #f5e6c8; }
+    .hero h1 span { color: #d4af37; }
     .hero .tagline { color: #c8b97a; margin-top: 0.5rem; font-size: 1rem; }
-    .hero .location { color: #9aaf7a; font-size: 0.9rem; margin-top: 0.3rem; } /* sage green */
+    .hero .location { color: #9aaf7a; font-size: 0.9rem; margin-top: 0.3rem; }
+
+    /* ── Doodle strip between hero and stats ── */
+    .doodle-strip {
+      display: flex; justify-content: center; align-items: center;
+      gap: 1.5rem; margin: 1rem 0;
+      opacity: 0.55;
+    }
+    .doodle-strip svg { animation: wobble 3s ease-in-out infinite; }
+    .doodle-strip svg:nth-child(2) { animation-delay: 0.5s; }
+    .doodle-strip svg:nth-child(3) { animation-delay: 1s; }
+    .doodle-strip svg:nth-child(4) { animation-delay: 1.5s; }
+    .doodle-strip svg:nth-child(5) { animation-delay: 2s; }
+
+    @keyframes wobble {
+      0%, 100% { transform: rotate(-4deg) scale(1); }
+      50%       { transform: rotate(4deg)  scale(1.08); }
+    }
 
     .quick-stats {
       display: flex; justify-content: center; gap: 2rem;
-      margin: 2.5rem auto; flex-wrap: wrap; max-width: 700px;
+      margin: 2rem auto; flex-wrap: wrap; max-width: 700px;
     }
-
     .qstat { text-align: center; }
     .qstat .num { font-size: 2rem; font-weight: 700; color: #d4af37; }
     .qstat .lbl { font-size: 0.8rem; color: #9aaf7a; margin-top: 0.2rem; }
@@ -83,7 +100,6 @@
       display: flex; justify-content: center; gap: 0.8rem;
       flex-wrap: wrap; margin-top: 1.5rem;
     }
-
     .pill {
       padding: 0.5rem 1.2rem; border-radius: 30px;
       text-decoration: none; font-size: 0.85rem; font-weight: 600;
@@ -95,23 +111,22 @@
     .pill-fb { background: #1877f2; color: #fff; }
     .pill-yt { background: #ff0000; color: #fff; }
 
+    /* ── About card ── */
     .about-section {
-      max-width: 700px; margin: 0 auto; padding: 3rem 2rem; text-align: center;
+      max-width: 700px; margin: 0 auto 2rem; padding: 3rem 2rem; text-align: center;
       background: rgba(10, 30, 15, 0.55);
       backdrop-filter: blur(8px);
       border-radius: 16px;
       border: 1px solid rgba(212, 175, 55, 0.2);
-      margin-bottom: 2rem;
     }
+    .about-section h2 { font-size: 1.5rem; color: #d4af37; margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .about-section p  { color: #c8d8b0; font-size: 1rem; line-height: 1.8; }
 
-    .about-section h2 {
-      font-size: 1.5rem;
-      color: #d4af37;           /* royal gold */
-      margin-bottom: 1rem;
-      letter-spacing: 0.05em;
+    /* inline doodle inside about card */
+    .about-doodles {
+      display: flex; justify-content: center; gap: 1rem;
+      margin-top: 1.5rem; opacity: 0.6;
     }
-
-    .about-section p { color: #c8d8b0; font-size: 1rem; line-height: 1.8; }
 
     .cta-section {
       text-align: center; padding: 3rem 2rem;
@@ -119,7 +134,6 @@
       backdrop-filter: blur(8px);
       border-top: 1px solid rgba(212, 175, 55, 0.2);
     }
-
     .cta-section h2 { font-size: 1.8rem; color: #f5e6c8; margin-bottom: 0.5rem; }
     .cta-section p  { color: #9aaf7a; margin-bottom: 1.5rem; }
 
@@ -133,6 +147,12 @@
     }
     .cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+    /* doodles beside CTA button */
+    .cta-doodle-row {
+      display: flex; justify-content: center; align-items: center;
+      gap: 1rem; margin-top: 1.5rem; opacity: 0.5;
+    }
+
     footer {
       text-align: center; padding: 1.5rem;
       color: #6a8a5a; font-size: 0.8rem;
@@ -143,6 +163,40 @@
 </head>
 <body>
 
+<!-- ── Fixed corner doodles (vines / branches) ── -->
+<svg class="doodle-corner tl" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 110 Q20 60 60 40 Q90 25 110 10" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M30 95 Q35 75 55 65" stroke="#9aaf7a" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M55 65 Q50 55 58 48" stroke="#9aaf7a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="58" cy="45" rx="7" ry="4" fill="#9aaf7a" transform="rotate(-30 58 45)"/>
+  <ellipse cx="70" cy="38" rx="6" ry="3.5" fill="#9aaf7a" transform="rotate(-50 70 38)"/>
+  <ellipse cx="85" cy="28" rx="5" ry="3" fill="#9aaf7a" transform="rotate(-60 85 28)"/>
+  <circle cx="25" cy="100" r="3" fill="#d4af37" opacity="0.7"/>
+  <circle cx="45" cy="80" r="2" fill="#d4af37" opacity="0.5"/>
+</svg>
+
+<svg class="doodle-corner tr" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 110 Q20 60 60 40 Q90 25 110 10" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M30 95 Q35 75 55 65" stroke="#9aaf7a" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <ellipse cx="58" cy="45" rx="7" ry="4" fill="#9aaf7a" transform="rotate(-30 58 45)"/>
+  <ellipse cx="70" cy="38" rx="6" ry="3.5" fill="#9aaf7a" transform="rotate(-50 70 38)"/>
+  <circle cx="25" cy="100" r="3" fill="#d4af37" opacity="0.7"/>
+</svg>
+
+<svg class="doodle-corner bl" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 110 Q20 60 60 40 Q90 25 110 10" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="58" cy="45" rx="7" ry="4" fill="#9aaf7a" transform="rotate(-30 58 45)"/>
+  <ellipse cx="70" cy="38" rx="6" ry="3.5" fill="#9aaf7a" transform="rotate(-50 70 38)"/>
+  <circle cx="45" cy="80" r="2" fill="#d4af37" opacity="0.5"/>
+</svg>
+
+<svg class="doodle-corner br" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 110 Q20 60 60 40 Q90 25 110 10" stroke="#d4af37" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="58" cy="45" rx="7" ry="4" fill="#9aaf7a" transform="rotate(-30 58 45)"/>
+  <circle cx="25" cy="100" r="3" fill="#d4af37" opacity="0.7"/>
+</svg>
+
+<!-- ── Nav ── -->
 <nav>
   <div class="logo">💕 dp_udan_sp</div>
   <ul>
@@ -152,11 +206,49 @@
   </ul>
 </nav>
 
+<!-- ── Hero ── -->
 <div class="hero">
   <div class="avatar">💑</div>
   <h1>Deepika <span>&</span> Soundhar</h1>
   <div class="tagline">School friends turned Life partners 💗</div>
   <div class="location">📍 Chennai · Digital Creators</div>
+
+  <!-- Doodle strip: heart, star, leaf, wave, flower -->
+  <div class="doodle-strip">
+    <!-- hand-drawn heart -->
+    <svg width="36" height="34" viewBox="0 0 36 34" fill="none">
+      <path d="M18 30 C18 30 3 20 3 11 C3 6 7 3 11 3 C14 3 16.5 5 18 7 C19.5 5 22 3 25 3 C29 3 33 6 33 11 C33 20 18 30 18 30Z"
+        stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <!-- hand-drawn star -->
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+      <path d="M17 3 L20 13 L31 13 L22 19 L25 30 L17 24 L9 30 L12 19 L3 13 L14 13 Z"
+        stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <!-- hand-drawn leaf -->
+    <svg width="30" height="36" viewBox="0 0 30 36" fill="none">
+      <path d="M15 33 Q5 20 8 8 Q15 2 22 8 Q26 20 15 33Z"
+        stroke="#9aaf7a" stroke-width="2" stroke-linecap="round" fill="none"/>
+      <path d="M15 33 Q14 20 15 8" stroke="#9aaf7a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <!-- hand-drawn wave / squiggle -->
+    <svg width="50" height="20" viewBox="0 0 50 20" fill="none">
+      <path d="M2 10 Q8 2 14 10 Q20 18 26 10 Q32 2 38 10 Q44 18 50 10"
+        stroke="#c8b97a" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <!-- hand-drawn flower -->
+    <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+      <circle cx="17" cy="17" r="4" stroke="#d4af37" stroke-width="2" fill="none"/>
+      <ellipse cx="17" cy="7"  rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.8" fill="none"/>
+      <ellipse cx="17" cy="27" rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.8" fill="none"/>
+      <ellipse cx="7"  cy="17" rx="5" ry="3" stroke="#9aaf7a" stroke-width="1.8" fill="none"/>
+      <ellipse cx="27" cy="17" rx="5" ry="3" stroke="#9aaf7a" stroke-width="1.8" fill="none"/>
+      <ellipse cx="9"  cy="9"  rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.5" fill="none" transform="rotate(-45 9 9)"/>
+      <ellipse cx="25" cy="9"  rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.5" fill="none" transform="rotate(45 25 9)"/>
+      <ellipse cx="9"  cy="25" rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.5" fill="none" transform="rotate(45 9 25)"/>
+      <ellipse cx="25" cy="25" rx="3" ry="5" stroke="#9aaf7a" stroke-width="1.5" fill="none" transform="rotate(-45 25 25)"/>
+    </svg>
+  </div>
 
   <div class="quick-stats">
     <div class="qstat"><div class="num">100K+</div><div class="lbl">Instagram Followers</div></div>
@@ -172,6 +264,7 @@
   </div>
 </div>
 
+<!-- ── About ── -->
 <div class="about-section">
   <h2>Who We Are</h2>
   <p>
@@ -181,12 +274,70 @@
     From relatable relationship content to everyday vlogs, we create content that feels real,
     warm, and genuinely us. Join our journey across Instagram, Facebook & YouTube.
   </p>
+
+  <!-- small doodles inside card -->
+  <div class="about-doodles">
+    <!-- tiny heart -->
+    <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
+      <path d="M11 18 C11 18 1 11 1 6 C1 3 3.5 1 6.5 1 C8.5 1 10 2.5 11 4 C12 2.5 13.5 1 15.5 1 C18.5 1 21 3 21 6 C21 11 11 18 11 18Z"
+        stroke="#d4af37" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- tiny star -->
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z"
+        stroke="#d4af37" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <!-- tiny leaf -->
+    <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
+      <path d="M9 20 Q3 12 5 5 Q9 1 13 5 Q16 12 9 20Z"
+        stroke="#9aaf7a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <path d="M9 20 Q8.5 12 9 5" stroke="#9aaf7a" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <!-- tiny squiggle -->
+    <svg width="40" height="14" viewBox="0 0 40 14" fill="none">
+      <path d="M2 7 Q7 1 12 7 Q17 13 22 7 Q27 1 32 7 Q37 13 40 7"
+        stroke="#c8b97a" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    </svg>
+    <!-- tiny flower -->
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+      <circle cx="11" cy="11" r="3" stroke="#d4af37" stroke-width="1.5" fill="none"/>
+      <ellipse cx="11" cy="4"  rx="2" ry="3.5" stroke="#9aaf7a" stroke-width="1.3" fill="none"/>
+      <ellipse cx="11" cy="18" rx="2" ry="3.5" stroke="#9aaf7a" stroke-width="1.3" fill="none"/>
+      <ellipse cx="4"  cy="11" rx="3.5" ry="2" stroke="#9aaf7a" stroke-width="1.3" fill="none"/>
+      <ellipse cx="18" cy="11" rx="3.5" ry="2" stroke="#9aaf7a" stroke-width="1.3" fill="none"/>
+    </svg>
+  </div>
 </div>
 
+<!-- ── CTA ── -->
 <div class="cta-section">
   <h2>Want to Work With Us?</h2>
   <p>We're open to brand deals, promotions, and creative collaborations.</p>
   <a href="contact.html" class="cta-btn">Let's Collaborate 💌</a>
+
+  <!-- doodle row below button -->
+  <div class="cta-doodle-row">
+    <svg width="30" height="28" viewBox="0 0 30 28" fill="none">
+      <path d="M15 25 C15 25 2 16 2 9 C2 5 5 2 9 2 C12 2 14 4 15 6 C16 4 18 2 21 2 C25 2 28 5 28 9 C28 16 15 25 15 25Z"
+        stroke="#d4af37" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <svg width="44" height="16" viewBox="0 0 44 16" fill="none">
+      <path d="M2 8 Q7 1 12 8 Q17 15 22 8 Q27 1 32 8 Q37 15 42 8"
+        stroke="#9aaf7a" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+      <path d="M13 2 L15.5 9.5 L23 9.5 L17 14 L19.5 22 L13 17.5 L6.5 22 L9 14 L3 9.5 L10.5 9.5 Z"
+        stroke="#d4af37" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg width="44" height="16" viewBox="0 0 44 16" fill="none">
+      <path d="M2 8 Q7 15 12 8 Q17 1 22 8 Q27 15 32 8 Q37 1 42 8"
+        stroke="#9aaf7a" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <svg width="30" height="28" viewBox="0 0 30 28" fill="none">
+      <path d="M15 25 C15 25 2 16 2 9 C2 5 5 2 9 2 C12 2 14 4 15 6 C16 4 18 2 21 2 C25 2 28 5 28 9 C28 16 15 25 15 25Z"
+        stroke="#d4af37" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
 </div>
 
 <footer>© 2026 dp_udan_sp · Deepika & Soundhar · Chennai</footer>
