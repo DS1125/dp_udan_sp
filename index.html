@@ -9,18 +9,19 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      color: #e8e4f8;
-      background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80');
+      color: #1e1b4b;
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
     }
 
+    /* soft white-blue overlay — keeps sky visible but readable */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background: rgba(15, 10, 40, 0.75);
+      background: rgba(219, 234, 254, 0.55);
       z-index: 0;
     }
 
@@ -33,7 +34,7 @@
     .doodle-corner {
       position: fixed;
       z-index: 2;
-      opacity: 0.22;
+      opacity: 0.28;
       pointer-events: none;
     }
     .doodle-corner.tl { top: 70px;  left: 10px; }
@@ -45,38 +46,38 @@
     nav {
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.2rem 2rem;
-      background: rgba(20, 10, 55, 0.78);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(167, 139, 250, 0.35);
+      background: rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.25);
       position: sticky; top: 0; z-index: 100;
     }
-    nav .logo { font-size: 1.2rem; font-weight: 700; color: #c4b5fd; }
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: #6d28d9; }
     nav ul { list-style: none; display: flex; gap: 1.5rem; }
-    nav ul a { color: #a5b4fc; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    nav ul a:hover, nav ul a.active { color: #c4b5fd; }
+    nav ul a { color: #3730a3; text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+    nav ul a:hover, nav ul a.active { color: #7c3aed; }
 
     /* ── Hero ── */
     .hero { text-align: center; padding: 5rem 2rem 3rem; }
 
     .avatar {
       width: 120px; height: 120px; border-radius: 50%;
-      border: 3px solid #a78bfa;
+      border: 3px solid #7c3aed;
       margin: 0 auto 1.2rem;
-      background: rgba(30, 15, 70, 0.6);
+      background: rgba(237, 233, 254, 0.6);
       display: flex; align-items: center; justify-content: center;
       font-size: 2.5rem;
-      box-shadow: 0 0 28px rgba(167, 139, 250, 0.45);
+      box-shadow: 0 0 28px rgba(124, 58, 237, 0.35);
     }
 
-    .hero h1 { font-size: 2.5rem; color: #ede9fe; }
-    .hero h1 span { color: #a78bfa; }
-    .hero .tagline { color: #c4b5fd; margin-top: 0.5rem; font-size: 1rem; }
-    .hero .location { color: #93c5fd; font-size: 0.9rem; margin-top: 0.3rem; }
+    .hero h1 { font-size: 2.5rem; color: #1e1b4b; }
+    .hero h1 span { color: #7c3aed; }
+    .hero .tagline { color: #4c1d95; margin-top: 0.5rem; font-size: 1rem; font-weight: 500; }
+    .hero .location { color: #1d4ed8; font-size: 0.9rem; margin-top: 0.3rem; }
 
     /* ── Doodle strip ── */
     .doodle-strip {
       display: flex; justify-content: center; align-items: center;
-      gap: 1.5rem; margin: 1.2rem 0; opacity: 0.65;
+      gap: 1.5rem; margin: 1.2rem 0; opacity: 0.7;
     }
     .doodle-strip svg { animation: wobble 3s ease-in-out infinite; }
     .doodle-strip svg:nth-child(2) { animation-delay: 0.5s; }
@@ -95,8 +96,8 @@
       margin: 2rem auto; flex-wrap: wrap; max-width: 700px;
     }
     .qstat { text-align: center; }
-    .qstat .num { font-size: 2rem; font-weight: 700; color: #a78bfa; }
-    .qstat .lbl { font-size: 0.8rem; color: #93c5fd; margin-top: 0.2rem; }
+    .qstat .num { font-size: 2rem; font-weight: 700; color: #6d28d9; }
+    .qstat .lbl { font-size: 0.8rem; color: #1d4ed8; margin-top: 0.2rem; font-weight: 500; }
 
     /* ── Pills ── */
     .platform-pills {
@@ -107,7 +108,6 @@
       padding: 0.5rem 1.2rem; border-radius: 30px;
       text-decoration: none; font-size: 0.85rem; font-weight: 600;
       transition: transform 0.2s, opacity 0.2s;
-      border: 1px solid rgba(167, 139, 250, 0.35);
     }
     .pill:hover { transform: translateY(-2px); opacity: 0.85; }
     .pill-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); color: #fff; }
@@ -117,31 +117,32 @@
     /* ── About ── */
     .about-section {
       max-width: 700px; margin: 0 auto 2rem; padding: 3rem 2rem; text-align: center;
-      background: rgba(20, 10, 55, 0.58);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(12px);
       border-radius: 18px;
-      border: 1px solid rgba(167, 139, 250, 0.25);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      box-shadow: 0 4px 30px rgba(109, 40, 217, 0.1);
     }
     .about-section h2 {
-      font-size: 1.5rem; color: #c4b5fd;
-      margin-bottom: 1rem; letter-spacing: 0.05em;
+      font-size: 1.5rem; color: #5b21b6;
+      margin-bottom: 1rem; letter-spacing: 0.04em;
     }
-    .about-section p { color: #ddd6fe; font-size: 1rem; line-height: 1.8; }
+    .about-section p { color: #1e1b4b; font-size: 1rem; line-height: 1.8; }
 
     .about-doodles {
       display: flex; justify-content: center; gap: 1rem;
-      margin-top: 1.5rem; opacity: 0.6;
+      margin-top: 1.5rem; opacity: 0.65;
     }
 
     /* ── CTA ── */
     .cta-section {
       text-align: center; padding: 3rem 2rem;
-      background: rgba(15, 8, 45, 0.65);
-      backdrop-filter: blur(8px);
-      border-top: 1px solid rgba(167, 139, 250, 0.2);
+      background: rgba(255, 255, 255, 0.38);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
     }
-    .cta-section h2 { font-size: 1.8rem; color: #ede9fe; margin-bottom: 0.5rem; }
-    .cta-section p  { color: #93c5fd; margin-bottom: 1.5rem; }
+    .cta-section h2 { font-size: 1.8rem; color: #1e1b4b; margin-bottom: 0.5rem; }
+    .cta-section p  { color: #1d4ed8; margin-bottom: 1.5rem; font-weight: 500; }
 
     .cta-btn {
       display: inline-block; padding: 0.8rem 2.5rem;
@@ -149,59 +150,60 @@
       color: #fff; border-radius: 30px;
       text-decoration: none; font-weight: 700; font-size: 1rem;
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 4px 24px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 4px 24px rgba(109, 40, 217, 0.4);
     }
     .cta-btn:hover { opacity: 0.88; transform: translateY(-2px); }
 
     .cta-doodle-row {
       display: flex; justify-content: center; align-items: center;
-      gap: 1rem; margin-top: 1.5rem; opacity: 0.5;
+      gap: 1rem; margin-top: 1.5rem; opacity: 0.55;
     }
 
     /* ── Footer ── */
     footer {
       text-align: center; padding: 1.5rem;
-      color: #6d6a9a; font-size: 0.8rem;
-      border-top: 1px solid rgba(167, 139, 250, 0.15);
-      background: rgba(8, 5, 25, 0.75);
+      color: #3730a3; font-size: 0.8rem;
+      border-top: 1px solid rgba(139, 92, 246, 0.2);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
     }
   </style>
 </head>
 <body>
 
-<!-- ── Fixed corner vine doodles in lavender/blue ── -->
+<!-- ── Corner doodles ── -->
 <svg class="doodle-corner tl" width="130" height="130" viewBox="0 0 130 130" fill="none">
-  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <path d="M30 105 Q38 80 60 68" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <path d="M60 68 Q55 55 63 47" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#c4b5fd" opacity="0.7" transform="rotate(-30 63 44)"/>
-  <ellipse cx="78" cy="35" rx="7" ry="4" fill="#93c5fd" opacity="0.6" transform="rotate(-50 78 35)"/>
-  <ellipse cx="95" cy="24" rx="6" ry="3.5" fill="#c4b5fd" opacity="0.5" transform="rotate(-60 95 24)"/>
-  <circle cx="22" cy="110" r="3.5" fill="#a78bfa" opacity="0.7"/>
-  <circle cx="45" cy="88"  r="2.5" fill="#60a5fa" opacity="0.6"/>
+  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M30 105 Q38 80 60 68" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <path d="M60 68 Q55 55 63 47" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#a78bfa" opacity="0.7" transform="rotate(-30 63 44)"/>
+  <ellipse cx="78" cy="35" rx="7" ry="4"   fill="#60a5fa" opacity="0.6" transform="rotate(-50 78 35)"/>
+  <ellipse cx="95" cy="24" rx="6" ry="3.5" fill="#a78bfa" opacity="0.5" transform="rotate(-60 95 24)"/>
+  <circle cx="22" cy="110" r="3.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="45" cy="88"  r="2.5" fill="#3b82f6" opacity="0.6"/>
   <circle cx="72" cy="60"  r="2"   fill="#a78bfa" opacity="0.5"/>
 </svg>
 
 <svg class="doodle-corner tr" width="130" height="130" viewBox="0 0 130 130" fill="none">
-  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <path d="M30 105 Q38 80 60 68" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" fill="none"/>
-  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#c4b5fd" opacity="0.7" transform="rotate(-30 63 44)"/>
-  <ellipse cx="78" cy="35" rx="7" ry="4" fill="#93c5fd" opacity="0.6" transform="rotate(-50 78 35)"/>
-  <circle cx="22" cy="110" r="3.5" fill="#a78bfa" opacity="0.7"/>
-  <circle cx="45" cy="88"  r="2.5" fill="#60a5fa" opacity="0.6"/>
+  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <path d="M30 105 Q38 80 60 68" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#a78bfa" opacity="0.7" transform="rotate(-30 63 44)"/>
+  <ellipse cx="78" cy="35" rx="7" ry="4"   fill="#60a5fa" opacity="0.6" transform="rotate(-50 78 35)"/>
+  <circle cx="22" cy="110" r="3.5" fill="#7c3aed" opacity="0.7"/>
+  <circle cx="45" cy="88"  r="2.5" fill="#3b82f6" opacity="0.6"/>
 </svg>
 
 <svg class="doodle-corner bl" width="130" height="130" viewBox="0 0 130 130" fill="none">
-  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#c4b5fd" opacity="0.7" transform="rotate(-30 63 44)"/>
-  <ellipse cx="78" cy="35" rx="7" ry="4" fill="#93c5fd" opacity="0.6" transform="rotate(-50 78 35)"/>
-  <circle cx="45" cy="88" r="2.5" fill="#60a5fa" opacity="0.6"/>
+  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#a78bfa" opacity="0.7" transform="rotate(-30 63 44)"/>
+  <ellipse cx="78" cy="35" rx="7" ry="4"   fill="#60a5fa" opacity="0.6" transform="rotate(-50 78 35)"/>
+  <circle cx="45" cy="88" r="2.5" fill="#3b82f6" opacity="0.6"/>
 </svg>
 
 <svg class="doodle-corner br" width="130" height="130" viewBox="0 0 130 130" fill="none">
-  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#c4b5fd" opacity="0.7" transform="rotate(-30 63 44)"/>
-  <circle cx="22" cy="110" r="3.5" fill="#a78bfa" opacity="0.7"/>
+  <path d="M10 120 Q25 65 65 42 Q95 25 120 10" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <ellipse cx="63" cy="44" rx="8" ry="4.5" fill="#a78bfa" opacity="0.7" transform="rotate(-30 63 44)"/>
+  <circle cx="22" cy="110" r="3.5" fill="#7c3aed" opacity="0.7"/>
 </svg>
 
 <!-- ── Nav ── -->
@@ -226,36 +228,34 @@
     <!-- heart -->
     <svg width="36" height="34" viewBox="0 0 36 34" fill="none">
       <path d="M18 30 C18 30 3 20 3 11 C3 6 7 3 11 3 C14 3 16.5 5 18 7 C19.5 5 22 3 25 3 C29 3 33 6 33 11 C33 20 18 30 18 30Z"
-        stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        stroke="#7c3aed" stroke-width="2.2" stroke-linecap="round" fill="none"/>
     </svg>
     <!-- star -->
     <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
       <path d="M17 3 L20 13 L31 13 L22 19 L25 30 L17 24 L9 30 L12 19 L3 13 L14 13 Z"
-        stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        stroke="#3b82f6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     </svg>
-    <!-- leaf -->
-    <svg width="30" height="36" viewBox="0 0 30 36" fill="none">
-      <path d="M15 33 Q5 20 8 8 Q15 2 22 8 Q26 20 15 33Z"
-        stroke="#c4b5fd" stroke-width="2" stroke-linecap="round" fill="none"/>
-      <path d="M15 33 Q14 20 15 8"
-        stroke="#c4b5fd" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <!-- cloud doodle (fits sky theme) -->
+    <svg width="48" height="30" viewBox="0 0 48 30" fill="none">
+      <path d="M10 22 Q4 22 4 16 Q4 10 10 10 Q11 4 18 4 Q24 4 26 9 Q30 6 35 9 Q42 9 42 16 Q42 22 36 22 Z"
+        stroke="#a78bfa" stroke-width="2" stroke-linecap="round" fill="none"/>
     </svg>
     <!-- wave -->
     <svg width="52" height="20" viewBox="0 0 52 20" fill="none">
       <path d="M2 10 Q8 2 14 10 Q20 18 26 10 Q32 2 38 10 Q44 18 50 10"
-        stroke="#93c5fd" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+        stroke="#60a5fa" stroke-width="2.2" stroke-linecap="round" fill="none"/>
     </svg>
     <!-- flower -->
     <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-      <circle cx="18" cy="18" r="4.5" stroke="#a78bfa" stroke-width="2" fill="none"/>
-      <ellipse cx="18" cy="7"  rx="3.5" ry="5.5" stroke="#c4b5fd" stroke-width="1.8" fill="none"/>
-      <ellipse cx="18" cy="29" rx="3.5" ry="5.5" stroke="#c4b5fd" stroke-width="1.8" fill="none"/>
-      <ellipse cx="7"  cy="18" rx="5.5" ry="3.5" stroke="#c4b5fd" stroke-width="1.8" fill="none"/>
-      <ellipse cx="29" cy="18" rx="5.5" ry="3.5" stroke="#c4b5fd" stroke-width="1.8" fill="none"/>
-      <ellipse cx="9"  cy="9"  rx="3"   ry="5"   stroke="#93c5fd" stroke-width="1.5" fill="none" transform="rotate(-45 9 9)"/>
-      <ellipse cx="27" cy="9"  rx="3"   ry="5"   stroke="#93c5fd" stroke-width="1.5" fill="none" transform="rotate(45 27 9)"/>
-      <ellipse cx="9"  cy="27" rx="3"   ry="5"   stroke="#93c5fd" stroke-width="1.5" fill="none" transform="rotate(45 9 27)"/>
-      <ellipse cx="27" cy="27" rx="3"   ry="5"   stroke="#93c5fd" stroke-width="1.5" fill="none" transform="rotate(-45 27 27)"/>
+      <circle cx="18" cy="18" r="4.5" stroke="#7c3aed" stroke-width="2" fill="none"/>
+      <ellipse cx="18" cy="7"  rx="3.5" ry="5.5" stroke="#a78bfa" stroke-width="1.8" fill="none"/>
+      <ellipse cx="18" cy="29" rx="3.5" ry="5.5" stroke="#a78bfa" stroke-width="1.8" fill="none"/>
+      <ellipse cx="7"  cy="18" rx="5.5" ry="3.5" stroke="#a78bfa" stroke-width="1.8" fill="none"/>
+      <ellipse cx="29" cy="18" rx="5.5" ry="3.5" stroke="#a78bfa" stroke-width="1.8" fill="none"/>
+      <ellipse cx="9"  cy="9"  rx="3" ry="5" stroke="#60a5fa" stroke-width="1.5" fill="none" transform="rotate(-45 9 9)"/>
+      <ellipse cx="27" cy="9"  rx="3" ry="5" stroke="#60a5fa" stroke-width="1.5" fill="none" transform="rotate(45 27 9)"/>
+      <ellipse cx="9"  cy="27" rx="3" ry="5" stroke="#60a5fa" stroke-width="1.5" fill="none" transform="rotate(45 9 27)"/>
+      <ellipse cx="27" cy="27" rx="3" ry="5" stroke="#60a5fa" stroke-width="1.5" fill="none" transform="rotate(-45 27 27)"/>
     </svg>
   </div>
 
@@ -285,35 +285,29 @@
   </p>
 
   <div class="about-doodles">
-    <!-- tiny heart -->
     <svg width="22" height="20" viewBox="0 0 22 20" fill="none">
       <path d="M11 18 C11 18 1 11 1 6 C1 3 3.5 1 6.5 1 C8.5 1 10 2.5 11 4 C12 2.5 13.5 1 15.5 1 C18.5 1 21 3 21 6 C21 11 11 18 11 18Z"
-        stroke="#a78bfa" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        stroke="#7c3aed" stroke-width="1.8" fill="none" stroke-linecap="round"/>
     </svg>
-    <!-- tiny star -->
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
       <path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z"
-        stroke="#60a5fa" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        stroke="#3b82f6" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <!-- tiny leaf -->
-    <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
-      <path d="M9 20 Q3 12 5 5 Q9 1 13 5 Q16 12 9 20Z"
-        stroke="#c4b5fd" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      <path d="M9 20 Q8.5 12 9 5"
-        stroke="#c4b5fd" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <!-- tiny cloud -->
+    <svg width="36" height="22" viewBox="0 0 36 22" fill="none">
+      <path d="M7 16 Q3 16 3 12 Q3 8 7 8 Q8 3 13 3 Q18 3 19 7 Q22 5 26 7 Q31 7 31 12 Q31 16 27 16 Z"
+        stroke="#a78bfa" stroke-width="1.6" stroke-linecap="round" fill="none"/>
     </svg>
-    <!-- tiny squiggle -->
     <svg width="42" height="14" viewBox="0 0 42 14" fill="none">
       <path d="M2 7 Q7 1 12 7 Q17 13 22 7 Q27 1 32 7 Q37 13 42 7"
-        stroke="#93c5fd" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        stroke="#60a5fa" stroke-width="1.8" stroke-linecap="round" fill="none"/>
     </svg>
-    <!-- tiny flower -->
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-      <circle cx="11" cy="11" r="3" stroke="#a78bfa" stroke-width="1.5" fill="none"/>
-      <ellipse cx="11" cy="4"  rx="2"   ry="3.5" stroke="#c4b5fd" stroke-width="1.3" fill="none"/>
-      <ellipse cx="11" cy="18" rx="2"   ry="3.5" stroke="#c4b5fd" stroke-width="1.3" fill="none"/>
-      <ellipse cx="4"  cy="11" rx="3.5" ry="2"   stroke="#c4b5fd" stroke-width="1.3" fill="none"/>
-      <ellipse cx="18" cy="11" rx="3.5" ry="2"   stroke="#c4b5fd" stroke-width="1.3" fill="none"/>
+      <circle cx="11" cy="11" r="3" stroke="#7c3aed" stroke-width="1.5" fill="none"/>
+      <ellipse cx="11" cy="4"  rx="2"   ry="3.5" stroke="#a78bfa" stroke-width="1.3" fill="none"/>
+      <ellipse cx="11" cy="18" rx="2"   ry="3.5" stroke="#a78bfa" stroke-width="1.3" fill="none"/>
+      <ellipse cx="4"  cy="11" rx="3.5" ry="2"   stroke="#a78bfa" stroke-width="1.3" fill="none"/>
+      <ellipse cx="18" cy="11" rx="3.5" ry="2"   stroke="#a78bfa" stroke-width="1.3" fill="none"/>
     </svg>
   </div>
 </div>
@@ -325,9 +319,31 @@
   <a href="contact.html" class="cta-btn">Let's Collaborate 💌</a>
 
   <div class="cta-doodle-row">
-    <!-- heart -->
     <svg width="30" height="28" viewBox="0 0 30 28" fill="none">
       <path d="M15 25 C15 25 2 16 2 9 C2 5 5 2 9 2 C12 2 14 4 15 6 C16 4 18 2 21 2 C25 2 28 5 28 9 C28 16 15 25 15 25Z"
-        stroke="#a78bfa" stroke-width="2" fill="none" stroke-linecap="round"/>
+        stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
     </svg>
-    <!-- wave
+    <svg width="44" height="16" viewBox="0 0 44 16" fill="none">
+      <path d="M2 8 Q7 1 12 8 Q17 15 22 8 Q27 1 32 8 Q37 15 42 8"
+        stroke="#60a5fa" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <!-- cloud -->
+    <svg width="48" height="28" viewBox="0 0 48 28" fill="none">
+      <path d="M9 22 Q4 22 4 16 Q4 10 9 10 Q10 4 17 4 Q23 4 25 9 Q29 6 34 9 Q41 9 41 16 Q41 22 35 22 Z"
+        stroke="#a78bfa" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <svg width="44" height="16" viewBox="0 0 44 16" fill="none">
+      <path d="M2 8 Q7 15 12 8 Q17 1 22 8 Q27 15 32 8 Q37 1 42 8"
+        stroke="#60a5fa" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </svg>
+    <svg width="30" height="28" viewBox="0 0 30 28" fill="none">
+      <path d="M15 25 C15 25 2 16 2 9 C2 5 5 2 9 2 C12 2 14 4 15 6 C16 4 18 2 21 2 C25 2 28 5 28 9 C28 16 15 25 15 25Z"
+        stroke="#7c3aed" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<footer>© 2026 dp_udan_sp · Deepika & Soundhar · Chennai</footer>
+
+</body>
+</html>
